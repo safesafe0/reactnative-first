@@ -5,7 +5,7 @@ import {
   Text,
 } from 'react-native';
 
-function HomeScreen({navigation}) {
+function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>HOME</Text>

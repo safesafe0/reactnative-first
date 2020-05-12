@@ -31,7 +31,7 @@ function LoginScreen({navigation}) {
       <TouchableHighlight
         style={styles.button}
         onPress={() => {
-          login(email, password);
+          login(email, password,{navigation});
         }}
         underlayColor="#c70f66">
         <Text style={styles.buttonTitle}>ログインする</Text>

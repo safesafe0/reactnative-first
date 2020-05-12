@@ -29,7 +29,7 @@ function SignupScreen({navigation}) {
       <TouchableHighlight
         style={styles.button}
         onPress={() => {
-          signup(email,password)
+          signup(email,password,{navigation})
         }}
         underlayColor="#c70f66">
         <Text style={styles.buttonTitle}>登録する</Text>

@@ -4,15 +4,16 @@ import EMV from '../../env.json';
 require('firebase/firestore');
 
 // Firebase 初期化
-const config = {
+const firebaseConfig = {
   apiKey: EMV.FIREBASE_API_KEY,
   authDomain: EMV.FIREBASE_AUTH_DOMAIN,
   databaseURL: EMV.FIREBASE_DB_URL,
   projectId: EMV.FIREBASE_PRJ_ID,
   storageBucket: EMV.FIREBASE_STORAGE,
   messagingSenderId: EMV.FIREBASE_SENDER_ID,
+  appId: EMV.FIREBASE_APP_ID,
 };
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 // ユーザ登録
 export function signup(email, password, {navigation}) {

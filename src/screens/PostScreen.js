@@ -1,26 +1,11 @@
 import React,{useState} from 'react';
 import {StyleSheet, View, TextInput} from 'react-native';
-
-import firebase from 'firebase';
+import {post} from '../components/firebase';
 import CircleButton from '../elements/CircleButton';
-
+// `users/${currentUser.uid}/posts`
 function PostScreen() {
   const [title, setTitle] = useState('');
  
-  function handlePress() {
-    const db = firebase.firestore();
-    const {currentUser}=firebase.auth();
-    db.collection(`users/${currentUser.uid}/posts`).add({
-      body: "あいうえお",
-      createdOn: "new Date()",
-    })
-    .then((docRef)=>{
-      console.log(docRef.id);
-    })
-    .catch((error)=>{
-      console.log(error);
-    });
-  }
   return (
     <View style={styles.container}>
       <TextInput
@@ -31,7 +16,7 @@ function PostScreen() {
       />
       <CircleButton
         onPress={() => {
-          {handlePress()}
+          post(title);
         }}>
         send
       </CircleButton>

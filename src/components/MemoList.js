@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
   StyleSheet, 
   View, 
@@ -6,9 +6,26 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+// function renderPost(post){
+//   return(
+//     <TouchableHighlight onPress={()=>{props.navigation.navigate('PostDetail')}}>
+//       <View style={styles.memoListItem}>
+//         <Text style={styles.memoTitle}>{memo.title}</Text>
+//         <Text style={styles.memoDate}>{memo.createdOn}</Text>
+//       </View>
+//     </TouchableHighlight>
+//   )
+// }
+
 function MemoList(props) {
+  // const list=[];
+  // props.postList.forEach(function(post){
+  //   list.push(renderPost(post));
+  // });
+  
   return (
     <View style={styles.memoList}>
+      {/* {list} */}
       <View style={styles.memoListItem}>
         <Text style={styles.memoTitle}>タイトル</Text>
         <Text style={styles.memoDate}>2020/05/05</Text>

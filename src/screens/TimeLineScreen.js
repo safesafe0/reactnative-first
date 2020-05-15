@@ -12,32 +12,33 @@ function TimeLineScreen (props){
   const[postList,setpostList]=useState();
 
   // useEffect(()=>{
-  //   const {currentUser}=firebase.auth().currentUser;
   //   const db =firebase.firestore();
-  //   db.collection(`users/${currentUser}/posts`)
-  //     .get()
-  //     .then((snapshot)=>{
-  //       // const postList=[];
-  //       // snapshot.forEach((doc)=>{
-  //       //   postList.push(doc.data());
-  //       // });
-  //       // setpostList({postList});
-  //       console.log(snapshot);
-  //     })
-  //     .catch((error)=>{
-  //       console.log(error);
-  //     })
+  //   const postsRef=db.collection('posts');
+  //   const postsSortedByCreatedOnRef=postsRef.orderBy('createdOn');
+  //   postsSortedByCreatedOnRef
+  //   .get()
+  //   .then(function(querySnapshot){
+  //     const postList=[];
+  //     querySnapshot.foreach(function(queryDocSnapshot){
+  //       postList.push(doc.data());
+  //     });
+  //     setpostList({postList});
+  //     console.log(snapshot);
+  //   })
+  //   .catch((error)=>{
+  //     console.log(error);
+  //   })
   // });
 
   return (
     <View style={styles.container}>
-      <MemoList memoList={postList}onPress={()=>props.navigation.navigate('Detail')}/>
+      <MemoList memoList={postList}navigation={props.navigation}/>
       <CircleButton onPress={() => {firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    // User is signed in.
+    // User is loged in.
     props.navigation.navigate('Post')
   } else {
-    // No user is signed in.
+    // No user is loged in.
     props.navigation.navigate('Signin')
   }
 });}}>add-circle</CircleButton>

@@ -1,7 +1,9 @@
 window.addEventListener = (x) => x;
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 import EMV from '../../env.json';
-require('firebase/firestore');
+// require('firebase/firestore');
 
 // Firebase 初期化
 const firebaseConfig = {
@@ -14,7 +16,6 @@ const firebaseConfig = {
   appId: EMV.FIREBASE_APP_ID,
 };
 firebase.initializeApp(firebaseConfig);
-
 // ユーザ登録
 export function signup(email, password, {navigation}) {
   firebase

@@ -12,7 +12,6 @@ import SigninScreen from './src/screens/SigninScreen';
 import TimeLineScreen from './src/screens/TimeLineScreen';
 import PostScreen from './src/screens/PostScreen';
 import PostDetailScreen from './src/screens/PostDetailScreen';
-
 // const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const HomeStack = createStackNavigator();

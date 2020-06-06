@@ -47,10 +47,10 @@ export function login(email, password, {navigation}) {
 }
 
 // タイムライン投稿
-export function post(title) {
-  firebase
+export async function post(title) {
+  await firebase
     .firestore()
-    .collection('users')
+    .collection(`users/${u.id}/posts`)
     .add({
       body: title,
       createdOn: '2020-05-13',
